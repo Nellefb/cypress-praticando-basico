@@ -18,6 +18,10 @@ jobs:
       - name: Checkout/Clone do projeto
         uses: actions/checkout@v6
 
+         #exemplo de execucao no terminal 
+      - name: Instalar dependencias do projeto
+        run: npm install
+
         #execucao e config do projeto
       - name: Run testes
         uses: cypress-io/github-action@v7
@@ -25,7 +29,3 @@ jobs:
           record: true
         env: 
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY}}
-
-        #exemplo de execucao no terminal 
-      - name: Instalar dependencias do projeto
-        run: echo nala
